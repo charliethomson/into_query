@@ -42,7 +42,7 @@ dependencies = [
 
 [[package]]
 name = "into_query"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
  "diesel",
  "into_query_derive",
@@ -50,7 +50,7 @@ dependencies = [
 
 [[package]]
 name = "into_query_derive"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "proc-macro2",
  "quote",
