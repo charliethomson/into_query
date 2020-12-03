@@ -7,6 +7,7 @@ description = "Provides a derive macro for IntoQuery"
 repository = "https://github.com/charliethomson/into_query/tree/master/into_query_derive"
 license = "MIT"
 readme = "README.md"
+documentation = "https://docs.rs/into_query_derive/0.1.0/into_query_derive/index.html"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]

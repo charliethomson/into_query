@@ -7,6 +7,7 @@ description = "Convert option structs into filters for use with diesel and (curr
 license = "MIT"
 repository = "https://github.com/charliethomson/into_query/tree/master/into_query"
 keywords = ["diesel", "database", "query", "filter"]
+documentation = "https://docs.rs/into_query/0.1.0/into_query/"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
