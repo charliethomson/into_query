@@ -8,3 +8,6 @@ where
     /// Convert `self` into a query
     fn into_query(self) -> diesel::helper_types::IntoBoxed<'static, T, diesel::mysql::Mysql>;
 }
+
+#[cfg(feature = "derive")]
+pub use into_query_derive::*;
