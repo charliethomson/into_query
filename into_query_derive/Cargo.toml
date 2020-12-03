@@ -1,0 +1,19 @@
+[package]
+name = "into_query_derive"
+version = "0.1.0"
+authors = ["Charlie Thomson <charliecthomson@gmail.com>"]
+edition = "2018"
+description = "Provides a derive macro for IntoQuery"
+documentation = ""
+repository = ""
+license = "MIT"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = {version = "1.0", features = ["parsing", "proc-macro", "extra-traits"]}
+quote = "1.0"
+proc-macro2 = "1.0.24"
