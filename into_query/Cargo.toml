@@ -3,6 +3,10 @@ name = "into_query"
 version = "0.1.0"
 authors = ["Charlie Thomson <charliecthomson@gmail.com>"]
 edition = "2018"
+description = "Convert option structs into filters for use with diesel and (currently only) mysql"
+licence = "MIT"
+repository = "https://github.com/charliethomson/into_query/tree/master/into_query"
+keywords = ["diesel", "database", "query", "filter"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

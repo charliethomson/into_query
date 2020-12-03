@@ -1,7 +1,7 @@
 # into_query_derive
 
 ### Disclaimer
-*This crate is intended to be used only via the `derive` feature on [into_query](https://crates.io/into_query).*
+*This crate is intended to be used only via the `derive` feature on [into_query](https://crates.io/crates/into_query).*
 
 ## Usage
 ```rust
