@@ -4,7 +4,6 @@ version = "0.1.0"
 authors = ["Charlie Thomson <charliecthomson@gmail.com>"]
 edition = "2018"
 description = "Provides a derive macro for IntoQuery"
-documentation = ""
 repository = "https://github.com/charliethomson/into_query/tree/master/into_query_derive"
 license = "MIT"
 readme = "README.md"
