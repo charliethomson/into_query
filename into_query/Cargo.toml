@@ -3,7 +3,7 @@ name = "into_query"
 version = "0.2.0"
 authors = ["Charlie Thomson <charliecthomson@gmail.com>"]
 edition = "2018"
-description = "Convert option structs into filters for use with diesel and (currently only) mysql"
+description = "Convert option structs into filters for use with diesel"
 license = "MIT"
 repository = "https://github.com/charliethomson/into_query/tree/master/into_query"
 keywords = ["diesel", "database", "query", "filter"]
@@ -12,9 +12,11 @@ documentation = "https://docs.rs/into_query/0.1.0/into_query/"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-diesel = { version = "1.4.5", features = ["mysql"] }
+diesel = { version = "1.4.5" }
 into_query_derive = { version = "0.1.1", optional=true, path = "../into_query_derive" }
 
 [features]
-default = []
-derive = [ "into_query_derive" ]
+default = [ "diesel/mysql", "into_query_derive" ]
+mysql = [ "diesel/mysql", "into_query_derive/mysql" ]
+postgres = [ "diesel/postgres", "into_query_derive/postgres" ]
+sqlite = [ "diesel/sqlite", "into_query_derive/sqlite" ]
