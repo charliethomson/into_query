@@ -1,6 +1,6 @@
-use std::{env, error::Error};
+use std::env;
 
-use diesel::{insert_into, prelude::*, Connection, OptionalExtension, PgConnection, RunQueryDsl};
+use diesel::{prelude::*, Connection, OptionalExtension, PgConnection, RunQueryDsl};
 use dotenv::dotenv;
 use into_query::IntoQuery;
 use models::User;
@@ -34,7 +34,7 @@ fn create_user() -> Option<models::User> {
         .expect("Failed")
 }
 
-fn find_user(name: String) -> QueryResult<User> {
+fn find_user(name: String) -> QueryResult<Vec<models::User>> {
     let filter = models::FindUser {
         username: Some(name),
         ..models::FindUser::default()
@@ -44,12 +44,12 @@ fn find_user(name: String) -> QueryResult<User> {
     let query_str = diesel::debug_query::<diesel::pg::Pg, _>(&query);
     println!("Built query: '{}'", query_str.to_string());
 
-    return query.limit(1).get_result::<User>(&establish_connection());
+    return query.get_results::<User>(&establish_connection());
 }
 
 fn main() {
     println!("Inserting test data...");
     println!("Result: {:#?}", create_user());
-    println!("Looking for user whose username is Testuser (test data)...");
+    println!("Looking for user whose usernames are Testuser (test data)...");
     println!("{:#?}", find_user("Testuser".into()));
 }

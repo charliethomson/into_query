@@ -128,6 +128,7 @@ fn attrs(item: &syn::DeriveInput) -> HashMap<syn::Ident, proc_macro2::Literal> {
         })
 }
 
+#[cfg(any(feature = "mysql", feature = "postgres", feature = "sqlite"))]
 #[proc_macro_derive(IntoQuery, attributes(table_name, schema_prefix))]
 pub fn derive_into_query(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);
@@ -173,8 +174,6 @@ pub fn derive_into_query(input: TokenStream) -> TokenStream {
     let db = quote! { diesel::pg::Pg };
     #[cfg(feature = "sqlite")]
     let db = quote! { diesel::sqlite::Sqlite };
-    #[cfg(not(any(feature = "mysql", feature = "postgres", feature = "sqlite")))]
-    compile_error!("Let into_query know what database backend you're using (mysql/postgres/sqlite feature in Cargo.toml)");
 
     let gen = quote! {
         impl ::into_query::IntoQuery<#schema_prefix::#table::dsl::#table, #db> for #struct_ident {
