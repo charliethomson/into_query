@@ -59,20 +59,12 @@ dependencies = [
 
 [[package]]
 name = "into_query_derive"
-version = "0.1.1"
+version = "0.2.0"
 dependencies = [
  "diesel",
  "proc-macro2",
  "quote",
  "syn",
-]
-
-[[package]]
-name = "into_query_test"
-version = "0.1.0"
-dependencies = [
- "diesel",
- "into_query",
 ]
 
 [[package]]

@@ -1,6 +1,6 @@
 [package]
 name = "into_query_derive"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["Charlie Thomson <charliecthomson@gmail.com>"]
 edition = "2018"
 description = "Provides a derive macro for IntoQuery"
@@ -20,6 +20,7 @@ quote = "1.0"
 proc-macro2 = "1.0.24"
 
 [features]
+default = [ "mysql" ]
 mysql = [ "diesel/mysql" ]
 postgres = [ "diesel/postgres" ]
 sqlite = [ "diesel/sqlite" ]
