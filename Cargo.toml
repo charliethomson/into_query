@@ -1,5 +1,6 @@
 [workspace]
 members = [
+    "example",
     "into_query",
     "into_query_derive"
 ]

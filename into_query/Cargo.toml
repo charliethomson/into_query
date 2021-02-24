@@ -1,6 +1,6 @@
 [package]
 name = "into_query"
-version = "0.2.1"
+version = "0.2.2"
 authors = ["Charlie Thomson <charliecthomson@gmail.com>"]
 edition = "2018"
 description = "Convert option structs into filters for use with diesel"
@@ -16,7 +16,6 @@ diesel = { version = "1.4.5" }
 into_query_derive = { version = "0.2.0", optional=true, path = "../into_query_derive" }
 
 [features]
-default = [ "diesel/mysql", "into_query_derive" ]
 mysql = [ "diesel/mysql", "into_query_derive/mysql" ]
 postgres = [ "diesel/postgres", "into_query_derive/postgres" ]
 sqlite = [ "diesel/sqlite", "into_query_derive/sqlite" ]
