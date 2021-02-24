@@ -10,4 +10,5 @@ where
     fn into_query(self) -> diesel::helper_types::IntoBoxed<'static, T, DB>;
 }
 
+#[cfg(any(feature = "mysql", feature = "postgres", feature = "sqlite"))]
 pub use into_query_derive::*;
