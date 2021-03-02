@@ -1,6 +1,7 @@
 [workspace]
 members = [
     "example",
+    "actix_example",
     "into_query",
     "into_query_derive"
 ]
