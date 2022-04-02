@@ -121,6 +121,7 @@ fn schema_prefix(item: &syn::DeriveInput) -> Option<String> {
 fn attrs(item: &syn::DeriveInput) -> HashMap<syn::Ident, proc_macro2::Literal> {
     item.attrs
         .iter()
+        .filter(|attr| attr_lit(attr).is_some() && attr_ident(attr).is_some())
         .map(|attr| (attr_ident(attr).unwrap(), attr_lit(attr).unwrap()))
         .fold(HashMap::new(), |mut map, (label, ident)| {
             map.insert(label.clone(), ident);

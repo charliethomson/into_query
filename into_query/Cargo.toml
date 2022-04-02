@@ -1,6 +1,6 @@
 [package]
 name = "into_query"
-version = "0.2.3"
+version = "0.2.4"
 authors = ["Charlie Thomson <charliecthomson@gmail.com>"]
 edition = "2018"
 description = "Convert option structs into filters for use with diesel"
@@ -13,7 +13,7 @@ documentation = "https://docs.rs/into_query/0.1.0/into_query/"
 
 [dependencies]
 diesel = { version = "1.4.5" }
-into_query_derive = { version = "0.2.2", optional=true, path = "../into_query_derive" }
+into_query_derive = { version = "0.2.3", optional=true, path = "../into_query_derive" }
 
 [features]
 mysql = [ "diesel/mysql", "into_query_derive/mysql" ]
