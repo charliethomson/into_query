@@ -148,12 +148,8 @@ pub fn derive_into_query(input: TokenStream) -> TokenStream {
                 quote! {
                     if let Some(container) = self.#ident {
                         let mut iter = container.into_iter();
-                        if let Some(first) = iter.next() {
-                            query = query.filter(#ident.eq(first));
-                            for item in iter {
-                                query = query.or_filter(#ident.eq(item));
-                            }
-                        }
+                        let values = iter.collect::<Vec<_>>();
+                        query = query.filter(#ident.eq_any(values));
                     }
                 }
             } else {
